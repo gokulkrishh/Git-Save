@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+
+	"name" : "Git Save",
+	"version" : "0.0.1",
+	"browser_action": {
+		"default_icon" : "icon.png",
+		"default_title": "Save current tab url to git repo"
+	},
+	"background": {
+    	"scripts": ["event.js"],
+    	"persistent": false
+  	},
+  	"permissions": [
+  		"<all_urls>",
+    	"activeTab"
+  	],
+  	
+  	"author": "gokulkrishh"
+}
