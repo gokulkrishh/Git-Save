@@ -5,16 +5,22 @@
 	"version" : "0.0.1",
 	"browser_action": {
 		"default_icon" : "icon.png",
-		"default_title": "Save current tab url to git repo"
+		"default_popup" : "popup.html"
 	},
 	"background": {
-    	"scripts": ["event.js"],
-    	"persistent": false
-  	},
-  	"permissions": [
-  		"<all_urls>",
-    	"activeTab"
-  	],
-  	
-  	"author": "gokulkrishh"
+		"scripts": ["event.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"<all_urls>",
+		"activeTab",
+		"https://github.com/login/oauth/access_token",
+		"tabs"
+	],
+	"content_scripts":[{
+        "matches":["https://github.com/robots.txt*"],
+        "js":["libs/oAuth/injection.js"],
+        "run_at":"document_start"
+    }],
+	"author": "gokulkrishh"
 }

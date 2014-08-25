@@ -4,7 +4,7 @@
 	3. Enter a repo url to give pull request
  --------------------------------------------------=*/
 
- var console = chrome.extension.getBackgroundPage().console;
+var console = chrome.extension.getBackgroundPage().console; //for debugging
 
 function getUrl(tabs) {
 	chrome.tabs.query({
